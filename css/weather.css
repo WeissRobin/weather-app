@@ -1,0 +1,151 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  text-decoration: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  background: linear-gradient(rgb(0, 110, 255), rgb(145, 145, 255));
+  background-repeat: no-repeat;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a:active {
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+@font-face {
+  font-family: "Outfit-semi";
+  src: url("/fonts/Outfit-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Outfit-thin";
+  src: url("/fonts/Outfit-Thin.ttf");
+}
+@font-face {
+  font-family: "Outfit-reg";
+  src: url("/fonts/Outfit-Regular.ttf");
+}
+#main-wrapper {
+  height: 90vh;
+}
+
+.navigation-wrapper {
+  height: 10vh;
+  font-family: "Outfit-reg";
+  color: white;
+}
+.navigation-wrapper .navigation-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5em;
+  background: none;
+}
+
+.title-wrapper {
+  text-align: center;
+}
+.title-wrapper .title {
+  font-family: "Outfit-semi";
+  color: white;
+  font-size: 4rem;
+  background: none;
+}
+.title-wrapper .title-desc {
+  font-family: "Outfit-thin";
+  color: white;
+  font-size: 2.3rem;
+  background: none;
+}
+.title-wrapper .title-image {
+  width: 300px;
+}
+
+.input-wrapper {
+  display: flex;
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+  margin: auto;
+  margin-top: 2.5em;
+}
+.input-wrapper #countries {
+  position: relative;
+  z-index: 2;
+  font-family: "Outfit-reg";
+  font-size: 1.1rem;
+  padding-block: 0.7em;
+  padding-inline: 1em;
+  border-radius: 5px;
+  border: none;
+}
+.input-wrapper #countries:focus {
+  outline: none;
+}
+.input-wrapper .suggestions {
+  background-color: red;
+  background: none;
+  position: absolute;
+  top: 95%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  max-height: 260px;
+  overflow: auto;
+}
+.input-wrapper .suggestions::-webkit-scrollbar {
+  width: 5px;
+}
+.input-wrapper .suggestions::-webkit-scrollbar-thumb {
+  background-color: #777777;
+  border-radius: 6px;
+}
+.input-wrapper .suggestions::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.input-wrapper .suggestions li {
+  background: none;
+  width: auto;
+  font-family: "Outfit-reg";
+  color: white;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 0.5em;
+  padding: 0.7em;
+  border-radius: 5px;
+  cursor: pointer;
+}
