@@ -11,7 +11,7 @@ cityInput.addEventListener("input", () => {
     return;
   } else {
     fetch(
-      `http://api.weatherapi.com/v1/search.json?key=b301fae74e5c4e42926164325232512&q=${input}`
+      `https://api.weatherapi.com/v1/search.json?key=b301fae74e5c4e42926164325232512&q=${input}`
     )
       .then((data) => data.json())
       .then((data) => showAutocomplete(data));
@@ -32,7 +32,7 @@ showAutocomplete = (data) => {
       suggestions.innerHTML = "";
       cityInput.value = e.target.textContent;
       fetch(
-        `http://api.weatherapi.com/v1/forecast.json?key=b301fae74e5c4e42926164325232512&q=${cityInput.value}&days=7&aqi=no&alerts=no`
+        `https://api.weatherapi.com/v1/forecast.json?key=b301fae74e5c4e42926164325232512&q=${cityInput.value}&days=7&aqi=no&alerts=no`
       )
         .then((data) => data.json())
         .then((data) => showUI(data));

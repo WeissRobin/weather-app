@@ -84,6 +84,11 @@ a:visited {
     justify-content: center;
     gap: 5em;
     background: none;
+    .navigation-item {
+      a {
+        color: white;
+      }
+    }
   }
 }
 .welcome-wrapper {
