@@ -23,7 +23,11 @@ ul {
   margin: 0;
   padding: 0;
   font-weight: normal;
-  background: linear-gradient(rgb(0, 110, 255), rgb(145, 145, 255));
+  background-image: linear-gradient(
+      rgba(0, 110, 255, 0.7),
+      rgba(145, 145, 255, 0.9)
+    ),
+    url("/weather-bg.jpg");
   background-repeat: no-repeat;
 }
 
@@ -63,7 +67,10 @@ a:visited {
 }
 
 #main-wrapper {
-    height: calc(100vh - 10vh);
+  height: calc(100vh - 10vh);
+  width: 100%;
+  display: flex;
+  overflow: hidden;
 }
 
 .navigation-wrapper {
@@ -79,82 +86,258 @@ a:visited {
     background: none;
   }
 }
-
-.title-wrapper {
+.welcome-wrapper {
+  width: 100%;
+  .title-wrapper {
     text-align: center;
     .title {
-        font-family: "Outfit-semi";
-        color: white;
-        font-size: 4rem;
-        background: none;
+      font-family: "Outfit-semi";
+      color: white;
+      font-size: 4rem;
+      background: none;
     }
-
+  
     .title-desc {
-        font-family: "Outfit-thin";
-        color: white;
-        font-size: 2.3rem;
-        background: none;
+      font-family: "Outfit-thin";
+      color: white;
+      font-size: 2.3rem;
+      background: none;
     }
     .title-image {
-        width: 300px;
+      width: 300px;
     }
-}
-
-.input-wrapper {
+  }
+  
+  .input-wrapper {
     display: flex;
     position: relative;
     width: max-content;
     margin: auto;
     margin-top: 2.5em;
     #countries {
-        position: relative;
-        z-index: 2;
-        font-family: 'Outfit-reg';
-        font-size: 1.1rem;
-        padding-block: .7em;
-        padding-inline: 1em;
-        border-radius: 5px;
-        border: none;
-        &:focus {
-            outline: none;
-        }
+      position: relative;
+      z-index: 2;
+      font-family: "Outfit-reg";
+      font-size: 1.1rem;
+      padding-block: 0.7em;
+      padding-inline: 1em;
+      border-radius: 5px;
+      border: none;
+      &:focus {
+        outline: none;
+      }
     }
     .suggestions {
-        background-color: red;
+      background-color: red;
+      background: none;
+      position: absolute;
+      top: 95%;
+      width: 100%;
+      background-color: rgba(black, 0.5);
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      max-height: 260px;
+      overflow: auto;
+  
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+  
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(rgb(119, 119, 119), 1);
+        border-radius: 6px;
+      }
+  
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+  
+      li {
         background: none;
-        position: absolute;
-        top: 95%;
-        width: 100%;
-        background-color: rgba(black, .5);
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-        max-height: 260px;
-        overflow: auto;
-
-        &::-webkit-scrollbar {
-            width: 5px;
-        }
-    
-        &::-webkit-scrollbar-thumb {
-            background-color: rgba(rgb(119, 119, 119), 1);
-            border-radius: 6px;
-        }
-    
-        &::-webkit-scrollbar-track {
-            background-color: transparent;
-        }
-
-        li {
-            background: none;
-            width: auto;
-            font-family: "Outfit-reg";
-            color: white;
-            font-size: 1rem;
-            background-color: rgba(black, .6);
-            margin: .5em;
-            padding: .7em;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+        width: auto;
+        font-family: "Outfit-reg";
+        color: white;
+        font-size: 1rem;
+        background-color: rgba(black, 0.6);
+        margin: 0.5em;
+        padding: 0.7em;
+        border-radius: 5px;
+        cursor: pointer;
+      }
     }
+  } 
+}
+
+.weather-content-wrapper {
+  width: 0;
+  background-color: white;
+  border-radius: 15px;
+  height: 760px;
+  overflow: hidden;
+  .weather-grid {
+    display: grid;
+    grid-template-areas:
+      "basic forecast"
+      "conditions forecast";
+    .weather-col-1 {
+      grid-area: basic;
+      display: flex;
+      flex-direction: column;
+      padding: 2em;
+      .weather-basic {
+        display: flex;
+        align-items: center;
+        padding-bottom: 5em;
+        .weather-city-location {
+          background: none;
+          font-family: "Outfit-semi";
+          font-size: 2rem;
+          color: rgb(39, 39, 39);
+        }
+        .weather-image {
+          width: auto;
+          height: 100%;
+          margin-left: auto;
+        }
+      }
+      .weather-text {
+        font-family: "Outfit-reg";
+        font-size: 1.4rem;
+        color: rgba(68, 68, 68, 0.4);
+      }
+      .weather-celsius {
+        font-family: "Outfit-semi";
+        font-size: 4rem;
+        color: rgb(39, 39, 39);
+      }
+    }
+  }
+  .weather-col-2 {
+    grid-area: conditions;
+    background-color: rgba(#ebecf1, .6);
+    padding: 2em;
+    border-radius: 15px;
+    margin: 2em;
+    margin-top: 5em;
+    .weather-conditions-title {
+      font-family: "Outfit-semi";
+      text-transform: uppercase;
+      background: none;
+      font-size: 0.9rem;
+      color: #90939c;
+      padding: 0.5em;
+      padding-bottom: 2em;
+    }
+    .weather-conditions {
+      max-width: 700px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em 10em;
+      .condition {
+        flex-basis: 200px;
+        font-family: "Outfit-reg";
+        display: flex;
+        .condition-title {
+          color: #90939c;
+          font-family: "Outfit-reg";
+          font-size: 1rem;
+        }
+        .condition-value {
+          color: rgb(39, 39, 39);
+          font-family: "Outfit-semi";
+          font-size: 1.9rem;
+        }
+        div {
+          margin-left: 0.5em;
+        }
+        div > * {
+          display: block;
+          line-height: 120%;
+        }
+        div > .condition-title {
+          line-height: 200%;
+        }
+      }
+    }
+  }
+  .weather-col-3 {
+    grid-area: forecast;
+    background-color: rgba(#ebecf1, .6);
+    padding: 2em;
+    margin: 0em 2em 2em .5em;
+    margin-top: 5em;
+    border-radius: 15px;
+    .weather-forecast-title {
+      font-family: "Outfit-semi";
+      text-transform: uppercase;
+      background: none;
+      font-size: 0.9rem;
+      color: #90939c;
+      padding: 0.5em;
+      padding-bottom: 2em;
+    }
+    .forecastday {
+      color: #90939c;
+      font-family: "Outfit-reg";
+      font-size: 1rem;
+      width: 100%;
+      height: calc(523.922px / 3);
+      border-bottom: 2px solid #90939c;
+      display: grid;
+      grid-template-areas: 
+      'day icon'
+      'text text';
+      align-content: center;
+    }
+    .forecast-day {
+      grid-area: day;
+      line-height: 400%;
+    }
+    .forecast-condition {
+      grid-area: text;
+      font-family: "Outfit-semi";
+      font-size: 1rem;
+      color: rgb(39, 39, 39);
+    }
+    .forecast-celsius {
+      background: none;
+      float: right;
+      margin-left: 2em;
+      .max-c {
+        font-family: "Outfit-semi";
+        font-size: 1rem;
+        color: rgb(39, 39, 39);
+      }
+      .min-c {
+        font-family: "Outfit-reg";
+        font-size: 1rem;
+        color: #90939c;
+      }
+    }
+    .forecast-image {
+      grid-area: icon;
+      margin-left: auto;
+    }
+  }
+}
+
+@keyframes SHRINK_MAIN {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 30%;
+  }
+}
+
+@keyframes EXPAND_WEATHER {
+  0% {
+    width: 0%;
+  }
+  20% {
+    width: 0%;
+  }
+  100% {
+    width: 65%;
+  }
 }
