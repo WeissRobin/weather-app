@@ -118,7 +118,7 @@ a:visited {
       position: relative;
       z-index: 2;
       font-family: "Outfit-reg";
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       padding-block: 0.7em;
       padding-inline: 1em;
       border-radius: 5px;
@@ -172,13 +172,16 @@ a:visited {
   width: 0;
   background-color: white;
   border-radius: 15px;
-  height: 760px;
+  height: max-content;
   overflow: hidden;
   .weather-grid {
     display: grid;
     grid-template-areas:
       "basic forecast"
+      "todayforecast forecast"
       "conditions forecast";
+    gap: 1em;
+    padding: 1em;
     .weather-col-1 {
       grid-area: basic;
       display: flex;
@@ -187,11 +190,11 @@ a:visited {
       .weather-basic {
         display: flex;
         align-items: center;
-        padding-bottom: 5em;
+        padding-bottom: 2em;
         .weather-city-location {
           background: none;
           font-family: "Outfit-semi";
-          font-size: 2rem;
+          font-size: 2.3rem;
           color: rgb(39, 39, 39);
         }
         .weather-image {
@@ -207,7 +210,7 @@ a:visited {
       }
       .weather-celsius {
         font-family: "Outfit-semi";
-        font-size: 4rem;
+        font-size: 5rem;
         color: rgb(39, 39, 39);
       }
     }
@@ -215,17 +218,15 @@ a:visited {
   .weather-col-2 {
     grid-area: conditions;
     background-color: rgba(#ebecf1, .6);
-    padding: 2em;
+    padding: 2em 2em 2em 2em;
     border-radius: 15px;
-    margin: 2em;
-    margin-top: 5em;
+    height: auto;
     .weather-conditions-title {
       font-family: "Outfit-semi";
       text-transform: uppercase;
       background: none;
       font-size: 0.9rem;
       color: #90939c;
-      padding: 0.5em;
       padding-bottom: 2em;
     }
     .weather-conditions {
@@ -239,7 +240,7 @@ a:visited {
         display: flex;
         .condition-title {
           color: #90939c;
-          font-family: "Outfit-reg";
+          font-family: 'Outfit-semi';
           font-size: 1rem;
         }
         .condition-value {
@@ -264,8 +265,6 @@ a:visited {
     grid-area: forecast;
     background-color: rgba(#ebecf1, .6);
     padding: 2em;
-    margin: 0em 2em 2em .5em;
-    margin-top: 5em;
     border-radius: 15px;
     .weather-forecast-title {
       font-family: "Outfit-semi";
@@ -273,7 +272,6 @@ a:visited {
       background: none;
       font-size: 0.9rem;
       color: #90939c;
-      padding: 0.5em;
       padding-bottom: 2em;
     }
     .forecastday {
@@ -317,6 +315,47 @@ a:visited {
     .forecast-image {
       grid-area: icon;
       margin-left: auto;
+    }
+  }
+
+  .weather-col-4 {
+    grid-area: todayforecast;
+    height: 200px;
+    background-color: rgba(#ebecf1, .6);
+    border-radius: 15px;
+    padding: 2em 2em 2em 2em;
+    display: flex;
+    flex-direction: column;
+
+    .today-forecast-title {
+      background: none;
+      font-family: 'Outfit-semi';
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: #90939c;
+      padding-bottom: 1em;
+    }
+    .today-forecast {
+      display: flex;
+      .today-forecast-item {
+        width: calc(770px / 6);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        .today-forecast-time {
+          color: #90939c;
+          font-family: 'Outfit-semi';
+        }
+        .today-forecast-celsius {
+          font-family: 'Outfit-semi';
+          font-size: 1.3rem;
+          color: rgb(39, 39, 39);
+        }
+        &:not(&:nth-last-child(1)) {
+          border-right: 2px solid rgba(#90939c, .5);
+        }
+      }
     }
   }
 }
