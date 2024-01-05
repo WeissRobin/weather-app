@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 100%;
 }
 
 *,
@@ -8,23 +8,17 @@ html {
 *:after {
   box-sizing: inherit;
   text-decoration: none;
+  margin: 0;
+  padding: 0;
 }
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ol,
-ul {
+body {
   margin: 0;
   padding: 0;
   font-weight: normal;
   background-image: linear-gradient(rgba(0, 110, 255, 0.7), rgba(145, 145, 255, 0.9)), url("/weather-bg.jpg");
   background-repeat: no-repeat;
+  transition: background-image 2s ease;
 }
 
 ol,
@@ -58,10 +52,9 @@ a:visited {
   src: url("/fonts/Outfit-Regular.ttf");
 }
 #main-wrapper {
-  height: 90vh;
+  min-height: 90vh;
   width: 100%;
   display: flex;
-  overflow: hidden;
 }
 
 .navigation-wrapper {
@@ -164,7 +157,6 @@ a:visited {
   border-radius: 15px;
   height: -moz-max-content;
   height: max-content;
-  overflow: hidden;
 }
 .weather-content-wrapper .weather-grid {
   display: grid;
@@ -306,7 +298,8 @@ a:visited {
 }
 .weather-content-wrapper .weather-col-4 {
   grid-area: todayforecast;
-  height: 200px;
+  height: -moz-max-content;
+  height: max-content;
   background-color: rgba(235, 236, 241, 0.6);
   border-radius: 15px;
   padding: 2em 2em 2em 2em;
@@ -323,6 +316,7 @@ a:visited {
 }
 .weather-content-wrapper .weather-col-4 .today-forecast {
   display: flex;
+  flex-wrap: wrap;
 }
 .weather-content-wrapper .weather-col-4 .today-forecast .today-forecast-item {
   width: 128.3333333333px;
@@ -363,3 +357,22 @@ a:visited {
     width: 65%;
   }
 }
+@media only screen and (max-width: 700px) {
+  html {
+    font-size: 80%;
+  }
+  #main-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .weather-content-wrapper {
+    width: 100vw;
+    width: 100% !important;
+    border-radius: 0;
+  }
+  .weather-grid {
+    grid-template-areas: "basic" "todayforecast" "conditions" "forecast" !important;
+  }
+}/*# sourceMappingURL=weather.css.map */

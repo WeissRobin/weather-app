@@ -41,6 +41,29 @@ showAutocomplete = (data) => {
 };
 
 showUI = (city) => {
+  const sunny = 'linear-gradient(rgba(255, 221, 51, 0.7),rgba(255, 153, 51, 0.9)),url("/weather-bg.jpg")';
+  const overcast = 'linear-gradient(rgba(169, 169, 169, 0.7),rgba(192, 192, 192, 0.9)),url("/weather-bg.jpg")';
+  const normal = 'linear-gradient(rgba(0, 110, 255, 0.7),rgba(145, 145, 255, 0.9)),url("/weather-bg.jpg")';
+  const clear = 'linear-gradient(rgba(135, 206, 250, 0.7),rgba(173, 216, 230, 0.9)),url("/weather-bg.jpg")';
+
+  let background = document.body;
+  const condition = city.current.condition.text;
+
+  switch (condition) {
+    case 'Sunny':
+      background.style.backgroundImage = sunny;
+      break;
+    case 'Overcast':
+      background.style.backgroundImage = overcast;
+      break;
+    case 'Clear':
+      background.style.backgroundImage = clear;
+      break;
+    default:
+      background.style.backgroundImage = normal;
+      break;
+  }
+
   const realFeelIcon =
     '<svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 1024 1792"><path fill="#90939c" d="M640 1344q0 80-56 136t-136 56t-136-56t-56-136q0-60 35-110t93-71V768h128v395q58 21 93 71t35 110m128 0q0-77-34-144t-94-112V320q0-80-56-136t-136-56t-136 56t-56 136v768q-60 45-94 112t-34 144q0 133 93.5 226.5T448 1664t226.5-93.5T768 1344m128 0q0 185-131.5 316.5T448 1792t-316.5-131.5T0 1344q0-182 128-313V320q0-133 93.5-226.5T448 0t226.5 93.5T768 320v711q128 131 128 313m128-576v128H832V768zm0-256v128H832V512zm0-256v128H832V256z"/></svg>';
   const uvIcon =
@@ -158,4 +181,5 @@ showUI = (city) => {
 
   welcomeUI.style.animation = "SHRINK_MAIN 1.2s forwards";
   weatherUI.style.animation = "EXPAND_WEATHER 1.2s forwards";
+
 };
