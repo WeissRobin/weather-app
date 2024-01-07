@@ -42,26 +42,182 @@ showAutocomplete = (data) => {
 
 showUI = (city) => {
   let body = document.body;
-  const condition = city.current.condition.text;
-  
-  // Remove existing weather classes
-  body.classList.remove('sunny', 'overcast', 'clear');
-  
-  // Apply new weather class
-  switch (condition) {
-    case 'Sunny':
-      body.classList.add('sunny');
-      break;
-    case 'Overcast':
-      body.classList.add('overcast');
-      break;
-    case 'Clear':
-      body.classList.add('clear');
-      break;
-    default:
-      // If no specific weather condition, use default styles
-      break;
-  }
+const condition = city.current.condition.text;
+
+// Remove existing weather classes
+body.classList.remove(
+  'sunny',
+  'partly-cloudy',
+  'cloudy',
+  'overcast',
+  'mist',
+  'clear',
+  'blowing-snow',
+  'blizzard',
+  'fog',
+  'freezing-fog',
+  'patchy-light-drizzle',
+  'light-drizzle',
+  'freezing-drizzle',
+  'heavy-freezing-drizzle',
+  'patchy-light-rain',
+  'light-rain',
+  'moderate-rain-times',
+  'moderate-rain',
+  'heavy-rain-times',
+  'heavy-rain',
+  'light-freezing-rain',
+  'moderate-heavy-freezing-rain',
+  'light-sleet',
+  'moderate-heavy-sleet',
+  'patchy-light-snow',
+  'light-snow',
+  'patchy-moderate-snow',
+  'moderate-snow',
+  'patchy-heavy-snow',
+  'heavy-snow',
+  'ice-pellets',
+  'light-rain-shower',
+  'moderate-heavy-rain-shower',
+  'torrential-rain-shower',
+  'light-sleet-showers',
+  'moderate-heavy-sleet-showers',
+  'light-snow-showers',
+  'moderate-heavy-snow-showers',
+  'light-showers-ice-pellets',
+  'moderate-heavy-showers-ice-pellets',
+  'patchy-light-rain-thunder',
+  'moderate-heavy-rain-thunder',
+  'patchy-light-snow-thunder',
+  'moderate-heavy-snow-thunder'
+);
+
+// Apply new weather class
+switch (condition) {
+  case 'Sunny':
+    body.classList.add('sunny');
+    break;
+  case 'Partly cloudy':
+    body.classList.add('partly-cloudy');
+    break;
+  case 'Cloudy':
+    body.classList.add('cloudy');
+    break;
+  case 'Overcast':
+    body.classList.add('overcast');
+    break;
+  case 'Mist':
+    body.classList.add('mist');
+    break;
+  case 'Clear':
+    body.classList.add('clear');
+    break;
+  case 'Blowing snow':
+    body.classList.add('blowing-snow');
+    break;
+  case 'Blizzard':
+    body.classList.add('blizzard');
+    break;
+  case 'Fog':
+    body.classList.add('fog');
+    break;
+  case 'Freezing fog':
+    body.classList.add('freezing-fog');
+    break;
+  case 'Patchy light drizzle':
+    body.classList.add('patchy-light-drizzle');
+    break;
+  case 'Light drizzle':
+    body.classList.add('light-drizzle');
+    break;
+  case 'Freezing drizzle':
+    body.classList.add('freezing-drizzle');
+    break;
+  case 'Heavy freezing drizzle':
+    body.classList.add('heavy-freezing-drizzle');
+    break;
+  case 'Patchy light rain':
+    body.classList.add('patchy-light-rain');
+    break;
+  case 'Light rain':
+    body.classList.add('light-rain');
+    break;
+  case 'Moderate rain at times':
+    body.classList.add('moderate-rain-times');
+    break;
+  case 'Moderate rain':
+    body.classList.add('moderate-rain');
+    break;
+  case 'Heavy rain at times':
+    body.classList.add('heavy-rain-times');
+    break;
+  case 'Heavy rain':
+    body.classList.add('heavy-rain');
+    break;
+  case 'Light freezing rain':
+    body.classList.add('light-freezing-rain');
+    break;
+  case 'Moderate or heavy freezing rain':
+    body.classList.add('moderate-heavy-freezing-rain');
+    break;
+  case 'Light sleet':
+    body.classList.add('light-sleet');
+    break;
+  case 'Moderate or heavy sleet':
+    body.classList.add('moderate-heavy-sleet');
+    break;
+  case 'Patchy light snow':
+    body.classList.add('patchy-light-snow');
+    break;
+  case 'Light snow':
+    body.classList.add('light-snow');
+    break;
+  case 'Patchy moderate snow':
+    body.classList.add('patchy-moderate-snow');
+    break;
+  case 'Moderate snow':
+    body.classList.add('moderate-snow');
+    break;
+  case 'Patchy heavy snow':
+    body.classList.add('patchy-heavy-snow');
+    break;
+  case 'Heavy snow':
+    body.classList.add('heavy-snow');
+    break;
+  case 'Ice pellets':
+    body.classList.add('ice-pellets');
+    break;
+  case 'Light rain shower':
+    body.classList.add('light-rain-shower');
+    break;
+  case 'Moderate or heavy rain shower':
+    body.classList.add('moderate-heavy-rain-shower');
+    break;
+  case 'Torrential rain shower':
+    body.classList.add('torrential-rain-shower');
+    break;
+  case 'Light sleet showers':
+    body.classList.add('light-sleet-showers');
+    break;
+  case 'Moderate or heavy sleet showers':
+    body.classList.add('moderate-heavy-sleet-showers');
+    break;
+  case 'Light snow showers':
+    body.classList.add('light-snow-showers');
+    break;
+  case 'Moderate or heavy snow showers':
+    body.classList.add('moderate-heavy-snow-showers');
+    break;
+  case 'Light showers of ice pellets':
+    body.classList.add('light-showers-ice-pellets');
+    break;
+  case 'Moderate or heavy showers of ice pellets':
+    body.classList.add('moderate-heavy-showers-ice-pellets');
+    break;
+  case 'Patchy light rain with thunder':
+    body.classList.add('patchy-light-rain-thunder');
+    break;
+}
   
 
   const realFeelIcon =

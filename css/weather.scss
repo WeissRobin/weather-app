@@ -42,7 +42,22 @@ body {
     rgba(255, 153, 51, 0.9)
   ),
   url("/weather-bg.jpg");
-  transition: background-color 2s ease, background-image 2s ease;
+}
+
+.partly-cloudy {
+  background-image: linear-gradient(
+    rgba(169, 169, 169, 0.7),
+    rgba(192, 192, 192, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.cloudy {
+  background-image: linear-gradient(
+    rgba(169, 169, 169, 0.7),
+    rgba(192, 192, 192, 0.9)
+  ),
+  url("/weather-bg.jpg");
 }
 
 .overcast {
@@ -51,7 +66,14 @@ body {
     rgba(192, 192, 192, 0.9)
   ),
   url("/weather-bg.jpg");
-  transition: background-color 2s ease, background-image 2s ease;
+}
+
+.mist {
+  background-image: linear-gradient(
+    rgba(169, 169, 169, 0.7),
+    rgba(192, 192, 192, 0.9)
+  ),
+  url("/weather-bg.jpg");
 }
 
 .clear {
@@ -60,8 +82,316 @@ body {
     rgba(173, 216, 230, 0.9)
   ),
   url("/weather-bg.jpg");
-  transition: background-color 2s ease, background-image 2s ease;
 }
+
+.blowing-snow {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.blizzard {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.fog {
+  background-image: linear-gradient(
+    rgba(128, 128, 128, 0.7),
+    rgba(169, 169, 169, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.freezing-fog {
+  background-image: linear-gradient(
+    rgba(128, 128, 128, 0.7),
+    rgba(169, 169, 169, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.patchy-light-drizzle {
+  background-image: linear-gradient(
+    rgba(0, 128, 255, 0.7),
+    rgba(30, 144, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.light-drizzle {
+  background-image: linear-gradient(
+    rgba(0, 128, 255, 0.7),
+    rgba(30, 144, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.freezing-drizzle {
+  background-image: linear-gradient(
+    rgba(128, 128, 128, 0.7),
+    rgba(169, 169, 169, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.heavy-freezing-drizzle {
+  background-image: linear-gradient(
+    rgba(128, 128, 128, 0.7),
+    rgba(169, 169, 169, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.patchy-light-rain {
+  background-image: linear-gradient(
+    rgba(0, 110, 255, 0.7),
+    rgba(145, 145, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.light-rain {
+  background-image: linear-gradient(
+    rgba(0, 110, 255, 0.7),
+    rgba(145, 145, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.moderate-rain-at-times {
+  background-image: linear-gradient(
+    rgba(0, 110, 255, 0.7),
+    rgba(145, 145, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.moderate-rain {
+  background-image: linear-gradient(
+    rgba(0, 110, 255, 0.7),
+    rgba(145, 145, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.heavy-rain-at-times {
+  background-image: linear-gradient(
+    rgba(0, 110, 255, 0.7),
+    rgba(145, 145, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.heavy-rain {
+  background-image: linear-gradient(
+    rgba(0, 110, 255, 0.7),
+    rgba(145, 145, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.light-freezing-rain {
+  background-image: linear-gradient(
+    rgba(128, 128, 128, 0.7),
+    rgba(169, 169, 169, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.moderate-heavy-freezing-rain {
+  background-image: linear-gradient(
+    rgba(128, 128, 128, 0.7),
+    rgba(169, 169, 169, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.light-sleet {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.moderate-heavy-sleet {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.patchy-light-snow {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.light-snow {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.patchy-moderate-snow {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.moderate-snow {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.patchy-heavy-snow {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.heavy-snow {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.ice-pellets {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.light-rain-shower {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.moderate-heavy-rain-shower {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.torrential-rain-shower {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.light-sleet-showers {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.moderate-heavy-sleet-showers {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.light-snow-showers {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.moderate-heavy-snow-showers {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.light-showers-ice-pellets {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.moderate-heavy-showers-ice-pellets {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.patchy-light-rain-thunder {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.moderate-heavy-rain-thunder {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.patchy-light-snow-thunder {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+.moderate-heavy-snow-thunder {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  ),
+  url("/weather-bg.jpg");
+}
+
+
+// Add styles for other weather conditions
+
+
 
 
 ol,
